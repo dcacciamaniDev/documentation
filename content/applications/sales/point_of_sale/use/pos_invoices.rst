@@ -17,9 +17,10 @@ Point of Sale allows you to issue and print invoices for :ref:`registered custom
 Configuration
 =============
 
-To define the default journals for a specific POS, go to the :ref:`POS' settings
-<pos/use/settings>`, scroll down to the :guilabel:`Accounting` section, and select the appropriate
-journals for :guilabel:`Orders` and :guilabel:`Invoices` under :guilabel:`Default Journals`.
+To define the default journals for a specific POS, go to :menuselection:`Point of Sale -->
+Configuration --> Settings`, scroll down to the :guilabel:`Accounting` section, and select the
+appropriate journals for :guilabel:`Orders` and :guilabel:`Invoices` under :guilabel:`Default
+Journals`.
 
 .. image:: pos_invoices/invoice-config.png
    :alt: accounting section in the POS settings
@@ -28,17 +29,33 @@ journals for :guilabel:`Orders` and :guilabel:`Invoices` under :guilabel:`Defaul
 .. note::
    Specific journals can also be defined for each :doc:`payment method <../payment_methods>`.
 
-Invoice a customer
+Customer invoicing
 ==================
 
-To invoice a customer, first make sure a :ref:`customer is set <pos/use/customers>` for the order.
-Then, upon :ref:`processing the payment <pos/use/sell>`, click :guilabel:`Invoice` underneath the
-customer's name to issue an invoice for that order.
+To invoice a customer from the :ref:`Payment screen <pos/use/sell>`, follow these steps:
 
-Select the payment method and click :guilabel:`Validate`. The invoice is automatically issued
-and ready to be downloaded and/or printed.
+#. Enable :icon:`fa-file-text-o` :guilabel:`Invoice`.
+#. Click :icon:`fa-user` :guilabel:`Customer`.
+#. Choose or :ref:`create a customer <pos/use/customers>`.
 
-Retrieve invoices
+Continue the :ref:`payment process <pos/use/sell>`. The invoice is automatically issued and ready
+for download and/or printing.
+
+To create a single global invoice for all orders linked to the same customer or invoicing address,
+follow these steps:
+
+#. Go to :menuselection:`Point of Sale --> Orders --> Orders`.
+#. Click the search bar and filter by :guilabel:`Customer`.
+#. Click the :icon:`fa-caret-right` (:guilabel:`caret`) icon next to a customer to display their
+   orders.
+#. Tick the :guilabel:`Order Ref` checkbox, click :guilabel:`Create Invoices`, then
+   :guilabel:`Create`.
+
+.. note::
+   To issue a global invoice, the orders' :guilabel:`Invoice Status` must be set to :guilabel:`To
+   Invoice`.
+
+Invoice retrieval
 =================
 
 To retrieve the invoice of a POS order, follow these steps:
@@ -48,18 +65,20 @@ To retrieve the invoice of a POS order, follow these steps:
 #. On the order form, click the :guilabel:`Invoice` smart button.
 
 .. tip::
-   - Invoiced orders have the :guilabel:`Fully Invoiced` :guilabel:`Invoice Status`.
-   - You can filter the list of orders to only display invoiced orders in the list: click the search
-     bar and select the :guilabel:`Invoiced` filter.
+   To filter the list of orders to display only invoiced orders, click the search bar and select
+   the :guilabel:`Invoiced` filter.
 
-QR codes to generate invoices
-=============================
+Invoice generation via QR codes
+===============================
 
-Customers can also request an invoice by scanning the QR code printed on their receipt. Upon
-scanning, they must fill in a form with their billing information and click :guilabel:`Get my
-invoice`. The invoice is then generated and available for download and the order's status is
-updated to :guilabel:`Fully invoiced`.
+To allow customers to request an invoice by scanning a QR code printed on their :ref:`receipt
+<pos/configuration/receipts>`, follow these steps:
 
-To use this feature, enable QR codes on receipts by going to :menuselection:`Point of Sale -->
-Configuration --> Settings`. Then, select the POS in the :guilabel:`Point of Sale` field, scroll
-down to the :guilabel:`Bills & Receipts` section, and enable :guilabel:`Use QR code on ticket`.
+#. Go to :menuselection:`Point of Sale --> Configuration --> Settings`.
+#. Select the POS in the :guilabel:`Point of Sale` field, and scroll down to the :guilabel:`Bills &
+   Receipts` section.
+#. Enable :guilabel:`Use QR code on ticket`.
+
+Upon scanning, customers must fill in a form with their billing information and click :guilabel:`Get
+my invoice`. The invoice is then generated and available for download, and the order status is
+updated to :guilabel:`Fully Invoiced`.
