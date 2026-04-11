@@ -74,6 +74,8 @@ If possible, configure the :guilabel:`Font Size`, :guilabel:`Font Choice`, and :
 Color` to match the template's existing text or branding. Click the :guilabel:`Options` tab and set
 the text alignment to match the template’s design.
 
+.. _pdf_quote_builder/dynamic_text/map-PDF-to-Odoo:
+
 Map PDF form fields to Odoo
 ===========================
 
